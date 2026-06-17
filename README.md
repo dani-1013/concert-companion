@@ -221,4 +221,4 @@ npm run dev
 
 ## Author
 
-Created by Dani Navarro as a personal software engineering project that combines a passion for live music and concert experiences with full-stack web development.
+Created by Danica Navarro as a personal software engineering project that combines a passion for live music and concert experiences with full-stack web development.

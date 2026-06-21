@@ -5,6 +5,8 @@ import Concerts from "./pages/Concerts";
 import Login from "./pages/Login";
 
 function App() {
+  document.title = "Concert Companion";
+  
   return (
     <div className="app">
       <nav className="nav">

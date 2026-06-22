@@ -55,7 +55,7 @@ main {
 
 .nav {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   justify-content: center;
   padding: 20px 20px;
   background-color: black;
@@ -259,4 +259,106 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.login-content {
+  flex-direction: column;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-content p {
+  font-family: $font-inter;
+  font-size: 15px;
+  color: #a0a0a0;
+}
+
+.login-link {
+  color: $neon-green;
+  cursor: pointer;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.login-box {
+  flex-direction: column;
+  display: flex;
+  gap: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+
+  .label-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  label {
+    font-family: $font-inter;
+    color: #888;
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+  }
+}
+
+.forgot-password-link {
+  font-family: $font-inter;
+  color: #888;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.forgot-password-link:hover {
+  color: $neon-purple;
+}
+
+.login-box p {
+  font-size: $font-inter;
+  color: rgb(187, 186, 186);
+}
+
+.email-box, .password-box {
+  border-radius: 15px;
+  padding: 0.8rem 1.5rem;
+  width: 100%;
+  color: white;
+  border: none;
+  font-family: $font-inter;
+  font-size: 1rem;
+  text-align: left;
+  box-sizing: border-box;
+  background-color: #3b3b3b;
+  outline: 1px solid rgb(41, 41, 41);
+
+  &:focus {
+    outline: 1px solid $neon-purple;
+  }
+}
+
+.login-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #4ade80;
+  color: black;
+  border: none;
+  padding: 13px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  font-family: $font-space;
+  font-size: 1rem;
 }

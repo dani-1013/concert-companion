@@ -26,9 +26,9 @@ function Home() {
 
         <div className = "numbers-cards">
           <StatCard number = "124" label = "TOTAL SHOWS" />
-          <StatCard number = "88" label = "UNIQUE ARTISTS" />
+          <StatCard number = "88" label = "UNIQUE ARTISTS" color = "#a855f7" />
           <StatCard number = "4.2" label = "AVG RATING" />
-          <StatCard number = "42" label = "VENUES" />
+          <StatCard number = "42" label = "VENUES" color = "#a855f7" />
         </div>
       </section>
 

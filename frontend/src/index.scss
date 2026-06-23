@@ -310,17 +310,41 @@ main {
     font-size: 0.7rem;
     letter-spacing: 0.1rem;
   }
-}
 
-.forgot-password-link {
-  font-family: $font-inter;
-  color: #888;
-  font-size: 0.75rem;
-  cursor: pointer;
-}
+  .forgot-password-link {
+    font-family: $font-inter;
+    color: #888;
+    font-size: 0.75rem;
+    cursor: pointer;
 
-.forgot-password-link:hover {
-  color: $neon-purple;
+    &:hover {
+      color: $neon-purple;
+    }
+  }
+
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #333333;
+    border-radius: 15px;
+    padding: 0 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+    outline: 2px solid rgb(72, 72, 72);
+
+    .email-icon, .password-icon {
+      color: #888;
+      font-size: 1.2rem;
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    &:focus-within {
+      outline: 2px solid $neon-purple;
+    }
+  }
 }
 
 .login-box p {
@@ -329,21 +353,16 @@ main {
 }
 
 .email-box, .password-box {
-  border-radius: 15px;
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 0;
   width: 100%;
   color: white;
+  background: transparent;
   border: none;
   font-family: $font-inter;
   font-size: 1rem;
   text-align: left;
   box-sizing: border-box;
-  background-color: #3b3b3b;
-  outline: 1px solid rgb(41, 41, 41);
-
-  &:focus {
-    outline: 1px solid $neon-purple;
-  }
+  outline: none;
 }
 
 .login-button {
@@ -361,4 +380,70 @@ main {
   position: relative;
   font-family: $font-space;
   font-size: 1rem;
+}
+
+.divider-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0.5rem 0 0.5rem 0;
+
+  .line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: rgb(41, 41, 41);
+  }
+
+  .or-text {
+    padding: 0 1rem;
+    color: #888888;
+    font-family: $font-inter;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+  }
+}
+
+.google-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #333333;
+  color: white;
+  border: none;
+  padding: 13px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  font-family: $font-inter;
+  font-size: 0.9rem;
+  outline: 2px solid rgb(72, 72, 72);
+
+  &:hover {
+    background-color: rgb(80, 80, 80);
+  }
+}
+
+.back-home {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  width: 100%;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #888888;
+    text-decoration: none;
+    font-family: $font-inter;
+    font-size: 0.75rem;
+
+    &:hover {
+      color: white;
+    }
+  }
 }

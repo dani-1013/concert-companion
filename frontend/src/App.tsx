@@ -3,10 +3,11 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Concerts from "./pages/Concerts";
 import Login from "./pages/Login";
+import Register from "./pages/Register"
 
 function App() {
   document.title = "Concert Companion";
-  
+
   return (
     <div className="app">
       <nav className="nav">
@@ -22,6 +23,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/concerts" element={<Concerts />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </main>
 

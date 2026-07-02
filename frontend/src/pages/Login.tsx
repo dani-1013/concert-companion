@@ -4,14 +4,20 @@ import { CiMail } from "react-icons/ci";
 import { CiLock } from "react-icons/ci";
 import { FaGoogle } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { doSignInWithEmailAndPassword, doSignInWithGoogle } from "../auth/auth";
+import { useAuth } from "../context/AuthContext";
+import { useState } from "react";
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <section className = "login-section">
       <div className = "login-content">
         
         <h2>Sign in</h2>
-        <p>New here? <span className = "login-link">Create an account</span></p>
+        <p>New here? <Link to = "/register" className = "login-link">Create an account</Link></p>
         
         <form className = "login-box">
 
@@ -26,6 +32,8 @@ function Login() {
                 type = "email" 
                 placeholder = "you@exmaple.com" 
                 className = "email-box"
+                value = {email}
+                onChange = {(e) => setEmail(e.target.value)}
                 required>
               </input>
             </div>
@@ -45,6 +53,8 @@ function Login() {
               type = "password" 
               placeholder = "******" 
               className = "password-box"
+              value = {password}
+              onChange = {(e) => setPassword(e.target.value)}
               required>
             </input>
             </div>

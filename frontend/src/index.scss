@@ -168,7 +168,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
+  background: #333333;
   border: 1px solid #999;
   padding: 15px 25px;
   border-radius: 25px;
@@ -180,7 +180,7 @@ main {
 }
 
 .secondary-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgb(80, 80, 80);
 }
 
 .numbers-section {
@@ -273,6 +273,10 @@ main {
   font-family: $font-inter;
   font-size: 15px;
   color: #a0a0a0;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .login-link {

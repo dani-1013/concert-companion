@@ -1,16 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import { CiMail } from "react-icons/ci";
 import { CiLock } from "react-icons/ci";
 import { FaGoogle } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { doSignInWithEmailAndPassword, doSignInWithGoogle } from "../auth/auth";
-import { useAuth } from "../context/AuthContext";
-import { useState } from "react";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      await doSignInWithEmailAndPassword(email, password);
+      console.log("Logged in!")
+      navigate("/diary");
+    }
+    catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <section className = "login-section">
@@ -19,7 +32,7 @@ function Login() {
         <h2>Sign in</h2>
         <p>New here? <Link to = "/register" className = "login-link">Create an account</Link></p>
         
-        <form className = "login-box">
+        <form className = "login-box" onSubmit = {handleLogin}>
 
           <div className = "input-group">
             <label htmlFor = "email">EMAIL</label>
@@ -66,7 +79,23 @@ function Login() {
             <span className = "or-text">OR</span>
             <span className = "line"></span>
           </div>
-          <button type = "submit" className = "google-button"><FaGoogle />Continue with Google</button>
+          <button
+            type="button"
+            className="google-button"
+            onClick={async () => {
+              try {
+                await doSignInWithGoogle();
+                console.log("Google login success");
+                navigate("/diary");
+              } 
+              catch (err) {
+                console.error(err);
+              }
+            }}
+          >
+            <FaGoogle />
+            Continue with Google
+          </button>
           <div className = "back-home">
             <Link to="/"><FaArrowLeftLong /> Back to home</Link>
           </div>

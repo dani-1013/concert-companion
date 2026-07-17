@@ -1,6 +1,6 @@
 import StatCard from '../components/StatCard';
-import { FaRegChartBar } from "react-icons/fa";
-import { IoIosAdd } from "react-icons/io";
+import { FaArrowRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function Home() {
 
@@ -8,45 +8,34 @@ function Home() {
     <main>
       <section className = "hero-section">
         <div className = "hero-content">
-          <h1>Track every<span style={{ color: '#a855f7' }}><br/> concert.</span>
-          <br/>Relive every<span style={{ color: '#4ade80' }}><br/> memory.</span></h1>
-          <p>Log shows, rate performances, and watch<br/> your live music history take place.</p>
+          <h1>Track every<span style={{ color: '#a855f7' }}> concert.</span>
+          <br/>Relive every<span style={{ color: '#4ade80' }}> memory.</span></h1>
+          <p>The concert diary you always wished you'd kept. Log every show,
+            <br/> rate every performance, and turn your live-music life into something
+            <br/> you can actually look back on.</p>
 
           <div className = "hero-buttons">
-            <button className = "primary-btn"><IoIosAdd size = {25}/> LOG A CONCERT</button>
-            <button className = "secondary-btn"><FaRegChartBar size = {17}/> View My Stats</button>
+            <Link to = "/register">
+              <button className = "primary-btn">Start your diary <FaArrowRight size = {15}/></button>
+            </Link>
+            <button className = "secondary-btn">See how it works</button>
           </div>
         </div>
       </section>
 
-      <section className = "numbers-section">
-        <div className = "numbers-content">
-          <p>YOUR YEAR IN LIVE</p>
-          <h1>2024 by the numbers</h1>
+      <section className = "features-section" id = "features">
+        <div className = "features-content">
+          <p><span style={{ color: '#a855f7' }}>EVERYTHING YOU NEED</span></p>
+          <h1>Built for people who actually go to shows.</h1>
         </div>
 
-        <div className = "numbers-cards">
+        <div className = "features-cards">
           <StatCard number = "124" label = "TOTAL SHOWS" />
           <StatCard number = "88" label = "UNIQUE ARTISTS" color = "#a855f7" />
           <StatCard number = "4.2" label = "AVG RATING" />
           <StatCard number = "42" label = "VENUES" color = "#a855f7" />
         </div>
       </section>
-
-      <section className = "logged-section">
-        <div className = "logged-content">
-          <h2>Recently Logged</h2>
-        </div>
-
-        <div className = "logged-cards">
-
-        </div>
-
-        <div className = "trend-box">
-
-        </div>
-      </section>
-
 
     </main>
   );

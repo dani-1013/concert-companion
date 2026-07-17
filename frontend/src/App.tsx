@@ -94,9 +94,11 @@ function App() {
         </Routes>
       </main>
 
+    {!hideNav && (
       <footer className="footer">
         Made with ❤️ by DN
       </footer>
+    )}
     </div>
   );
 }

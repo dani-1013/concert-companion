@@ -118,23 +118,26 @@ main {
   z-index: 3;
   color: white;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 4rem 0;
   width: 100%;
   max-width: 1200px;
-}
 
-.hero-content h1 {
+  h1 {
     font-size: 4rem;
     margin: 0;
-}
+    text-align: center;
+  }
 
-.hero-content p {
-    font-size: 1.3rem;
+  p {
+    font-size: 1.1rem;
     margin-top: 1.5rem;
-    max-width: 500px;
-    line-height: 1.5rem;
+    max-width: 700px;
+    line-height: 1.8rem;
     color: rgb(187, 186, 186);
+    font-family: $font-inter;
+    text-align: center;
+  }
 }
 
 .hero-buttons {
@@ -183,7 +186,7 @@ main {
   background: rgb(80, 80, 80);
 }
 
-.numbers-section {
+.features-section {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -192,7 +195,7 @@ main {
   background-color: black;
 }
 
-.numbers-content {
+.features-content {
   display: flex;
   z-index: 3;
   flex-direction: column;
@@ -200,21 +203,21 @@ main {
   margin-bottom: 2rem;
   width: 100%;
   max-width: 1200px;
+  
+  p {
+    margin-top: 3.5rem;
+    font-size: 10px;
+    font-family: $font-inter;
+    letter-spacing: 0.3em;
+    color: rgb(187, 186, 186);
+  }
+
+  h1 {
+    margin-top: 1rem;
+  }
 }
 
-.numbers-content p {
-  margin-top: 3.5rem;
-  font-size: 10px;
-  font-family: $font-inter;
-  letter-spacing: 0.3em;
-  color: rgb(187, 186, 186);
-}
-
-.numbers-content h1 {
-  margin-top: 1rem;
-}
-
-.numbers-cards {
+.features-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
@@ -243,11 +246,6 @@ main {
 .stat-card p {
   font-size: 10px;
   letter-spacing: 0.1rem;
-}
-
-.logged-section {
-  width: 100%;
-  padding: 4rem 10rem;
 }
 
 /* Login Page */
@@ -503,4 +501,253 @@ main {
   &:hover {
     color: white;
   }
+}
+
+/* Diary */
+
+.diary-section {
+  height: 120vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgb(41, 41, 41);
+  justify-content: center;
+  padding: 0 2rem 2rem 2rem;
+}
+
+.diary-content {
+  display: flex;
+  z-index: 3;
+  color: white;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4rem 0;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.diary-content h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.diary-content p {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    max-width: 600px;
+    line-height: 1.5rem;
+    color: rgb(187, 186, 186);
+}
+
+.diary-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #4ade80;
+  color: black;
+  border: none;
+  padding: 13px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  font-family: $font-space;
+  font-size: 1rem;
+}
+
+.primary-btn:hover {
+  background: #4ade80;
+}
+
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #333333;
+  border: 1px solid #999;
+  padding: 15px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  color: white;
+  position: relative;
+  font-family: $font-space;
+  font-size: 1rem;
+}
+
+.secondary-btn:hover {
+  background: rgb(80, 80, 80);
+}
+
+.numbers-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: black;
+}
+
+.numbers-content {
+  display: flex;
+  z-index: 3;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.numbers-content p {
+  margin-top: 3.5rem;
+  font-size: 10px;
+  font-family: $font-inter;
+  letter-spacing: 0.3em;
+  color: rgb(187, 186, 186);
+}
+
+.numbers-content h1 {
+  margin-top: 1rem;
+}
+
+.numbers-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.stat-card {
+  background-color: #111111;
+  border-radius: 15px;
+  border: 1px solid rgb(41, 41, 41);
+  padding: 2rem 2rem;
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.stat-card h1 {
+  font-size: 3rem;
+}
+
+.stat-card p {
+  font-size: 10px;
+  letter-spacing: 0.1rem;
+}
+
+.logged-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: black;
+}
+
+.logged-content {
+  display: flex;
+  z-index: 3;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Concert Modal */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-container {
+  width: 42rem;
+  height: 40rem;
+  max-height: 90vh;
+  background: white;
+  border-radius: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.modal-header {
+  position: relative;
+  flex-shrink: 0;
+
+  p {
+    font-family: $font-inter;
+    font-size: 0.75rem;
+  }
+
+  h1 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+}
+
+.modal-content {
+  overflow-y: auto;
+  flex: 1;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.exit-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.modal-footer {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.save-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #4ade80;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  font-family: $font-space;
+  font-size: 1rem;
+}
+
+.save-btn:hover {
+  background: #4ade80;
 }

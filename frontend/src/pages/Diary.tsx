@@ -38,7 +38,7 @@ function Diary() {
       <section className = "numbers-section" id = "features">
         <div className = "numbers-content">
           <p>YOUR YEAR IN LIVE</p>
-          <h1>2024 by the numbers</h1>
+          <h1>2026 by the numbers</h1>
         </div>
 
         <div className = "numbers-cards">

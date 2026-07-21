@@ -1,19 +1,43 @@
 import { Request, Response } from "express";
-import { concerts } from "../data/concertData.js";
+import { prisma } from "../lib/prisma.js";
 
-export const getConcerts = (req: Request, res: Response) => {
-    res.json(concerts);
+export const getConcerts = async (req: Request, res: Response) => {
+    try {
+        const concerts = await prisma.concert.findMany();
+
+        res.json(concerts);
+    } catch (error) {
+        res.status(500).json({
+            message: "Something went wrong"
+        });
+    }
 };
 
-export const createConcert = (req: Request, res: Response) => {
-    const newConcert = {
-        id: concerts.length + 1,
-        artist: req.body.artist,
-        venue: req.body.venue,
-        date: req.body.date
-    };
+export const createConcert = async (req: Request, res: Response) => {
+    try {
+        const { artist, venue, city, date, userId } = req.body;
 
-    concerts.push(newConcert);
+        if (!artist || !venue || !city || !date || !userId) {
+            return res.status(400).json({
+                message: "Artist, venue, city, date, and userId are required"
+            });
+        }
 
-    res.status(201).json(newConcert);
+        const newConcert = await prisma.concert.create({
+            data: {
+                artist,
+                venue,
+                city,
+                date: new Date(date),
+                userId
+            }
+        });
+
+        res.status(201).json(newConcert);
+
+    } catch (error) {
+        res.status(500).json({
+            message: "Something went wrong"
+        });
+    }
 };

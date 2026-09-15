@@ -75,9 +75,12 @@ function ConcertModal({
           onSubmit={handleSubmit}
         >
           <div className="artist-section">
-            <p>
-              <LuMusic /> Artist
-            </p>
+            <div className = "artist-title">
+              <p>
+                <LuMusic /> Artist
+              </p>
+            </div>
+            
 
             <input
               placeholder="Enter artist"
@@ -91,57 +94,87 @@ function ConcertModal({
           </div>
 
           <div className="venue-section">
-            <p>
-              <IoLocationOutline /> Venue
-            </p>
-
+            <div className = "venue-title">
+              <p>
+                <IoLocationOutline /> Venue
+              </p>
+            </div>
+            
             <input
               placeholder="e.g. Kia Forum"
               className="venue-input"
               value={venue}
-              onChange={(e) =>
-                setVenue(e.target.value)
-              }
+              onChange={(e) => setVenue(e.target.value)}
               required
             />
           </div>
 
           <div className="city-section">
-            <p>
-              <IoLocationOutline /> City
-            </p>
-
+            <div className = "city-title">
+              <p>
+                <IoLocationOutline /> City
+              </p>
+            </div>
+            
             <input
               placeholder="e.g. Los Angeles"
               className="city-input"
               value={city}
-              onChange={(e) =>
-                setCity(e.target.value)
-              }
+              onChange={(e) => setCity(e.target.value)}
               required
             />
           </div>
 
           <div className="date-section">
-            <p>
-              <CiCalendar /> Date
-            </p>
-
+            <div className = "date-title">
+              <p>
+                <CiCalendar /> Date
+              </p>
+            </div>
+            
             <input
               type="date"
               className="date-input"
               value={date}
-              onChange={(e) =>
-                setDate(e.target.value)
-              }
+              onChange={(e) => setDate(e.target.value)}
               required
             />
           </div>
 
-          <p>Rating</p>
-          <p>Notes</p>
-          <p>Tags</p>
-          <p>Photo</p>
+          <div className="rating-section">
+            <p>Rating</p>
+
+            <div className="rating-stars">
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span className="rating-dash">—</span>
+            </div>
+        </div>
+
+        <div className="notes-section">
+            <p>Notes</p>
+
+            <textarea
+                placeholder="Best song, wildest moment, the friends you made..."
+            />
+        </div>
+
+        <div className="tags-section">
+            <p>Tags</p>
+
+            <div className="tag-list">
+                <button type="button">Solo</button>
+                <button type="button">With friends</button>
+                <button type="button">Festival</button>
+                <button type="button">Opening act</button>
+                <button type="button">Encore</button>
+                <button type="button">Front row</button>
+                <button type="button">Pit</button>
+            </div>
+        </div>
 
           <div className="modal-footer">
             <button

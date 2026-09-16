@@ -652,22 +652,196 @@ main {
 }
 
 .logged-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: black;
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+
+    box-sizing: border-box;
 }
+
+
+/* HEADER */
 
 .logged-content {
   display: flex;
-  z-index: 3;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 2rem;
+
+  h2 {
+    margin: 0;
+    color: #f4f4f5;
+    font-family: $font-space;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+}
+
+.view-wall-btn {
+  padding: 0 0 3px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #4ade80;
+  color: #4ade80;
+  font-family: $font-inter;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    color: #86efac;
+    border-color: #86efac;
+  }
+}
+
+.logged-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.concert-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 170px;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: #101012;
+  border: 1px solid #242428;
+  border-radius: 20px;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: #131316;
+    border-color: #3f3f46;
+  }
+}
+
+.concert-card-image {
+  flex-shrink: 0;
+  width: 100px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 13px;
+}
+
+.concert-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  max-width: 1200px;
+  height: 100%;
+  background: linear-gradient(145deg, #30124c, #18181b);
+  color: #a855f7;
+  font-size: 2rem;
+}
+
+.concert-card-info {
+  min-width: 0;
+  padding: 0 1.25rem;
+
+  h3 {
+    margin: 0 0 0.5rem;
+    color: #f4f4f5;
+    font-family: $font-space;
+    font-size: 1rem;
+    font-weight: 700;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0.3rem 0;
+    color: #a1a1aa;
+    font-family: $font-inter;
+    font-size: 0.9rem;
+
+    svg {
+      flex-shrink: 0;
+      color: #71717a;
+      font-size: 1rem;
+    }
+  }
+}
+
+.concert-rating {
+  display: flex;
+  gap: 4px;
+  margin-top: 0.7rem;
+
+  span {
+    width: 12px;
+    height: 12px;
+    background: #3f3f46;
+    border-radius: 50%;
+  }
+
+  span.filled {
+    background:#a855f7;
+  }
+}
+
+
+.delete-concert-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 8px;
+  background: transparent;
+  border: none;
+  color: #71717a;
+  font-family: $font-inter;
+  font-size: 0.75rem;
+  cursor: pointer;
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    color: #f87171;
+  }
+}
+
+.concert-card:hover .delete-concert-btn {
+    opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .logged-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .logged-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .concert-card {
+    min-height: 145px;
+    padding: 0.8rem;
+  }
+
+  .concert-card-image {
+    width: 85px;
+    height: 115px;
+  }
+
+  .concert-card-info {
+    padding: 0 0.9rem;
+  }
 }
 
 /* Concert Modal */

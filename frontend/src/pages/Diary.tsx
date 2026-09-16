@@ -3,11 +3,10 @@ import ConcertModal from "../components/ConcertModal";
 import StatCard from "../components/StatCard";
 import { FaRegChartBar } from "react-icons/fa";
 import { IoIosAdd } from "react-icons/io";
-import {
-  getConcerts,
-  createConcert,
-  deleteConcert,
-} from "../services/api";
+import { getConcerts, createConcert, deleteConcert } from "../services/api";
+import { LuMusic } from "react-icons/lu";
+import { IoLocationOutline } from "react-icons/io5";
+import { CiCalendar } from "react-icons/ci";
 
 type Concert = {
   id: string;
@@ -148,6 +147,10 @@ function Diary() {
       <section className="logged-section">
         <div className="logged-content">
           <h2>Recently Logged</h2>
+
+          <button className="view-wall-btn">
+            View Wall
+          </button>
         </div>
 
         <div className="logged-cards">
@@ -156,23 +159,48 @@ function Diary() {
           ) : concerts.length === 0 ? (
             <p>No concerts logged yet. Add your first concert!</p>
           ) : (
-            concerts.map((concert) => (
+            concerts.slice(0, 4).map((concert) => (
               <article
                 className="concert-card"
                 key={concert.id}
               >
-                <div>
+                <div className="concert-card-image">
+                  <div className="concert-image-placeholder">
+                    <LuMusic />
+                  </div>
+                </div>
+
+                <div className="concert-card-info">
                   <h3>{concert.artist}</h3>
 
-                  <p>{concert.venue}</p>
+                  <p>
+                    <IoLocationOutline />
+                    {concert.venue}
+                  </p>
 
                   <p>
-                    {concert.city} ·{" "}
-                    {new Date(concert.date).toLocaleDateString()}
+                    <CiCalendar />
+                    {new Date(concert.date).toLocaleDateString(
+                      "en-US",
+                      {
+                        month: "short",
+                        day: "2-digit",
+                        year: "numeric",
+                      }
+                    )}
                   </p>
+
+                  <div className="concert-rating">
+                    <span className="filled"></span>
+                    <span className="filled"></span>
+                    <span className="filled"></span>
+                    <span className="filled"></span>
+                    <span></span>
+                  </div>
                 </div>
 
                 <button
+                  className="delete-concert-btn"
                   onClick={() =>
                     handleDeleteConcert(concert.id)
                   }
@@ -182,9 +210,6 @@ function Diary() {
               </article>
             ))
           )}
-        </div>
-
-        <div className="trend-box">
         </div>
       </section>
 
